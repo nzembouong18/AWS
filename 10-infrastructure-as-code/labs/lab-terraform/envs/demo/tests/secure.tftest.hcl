@@ -1,9 +1,9 @@
-# Défi : `terraform test` (nécessite des credentials ; command = plan évite de créer des ressources)
-run "versioning_active_en_prod" {
+# Défi : `terraform test` (nécessite des credentials ; command = plan ne crée aucune ressource)
+run "chiffrement_actif_sur_tous_les_buckets" {
   command = plan
 
   assert {
-    condition     = module.bucket["prod"].id != ""
-    error_message = "Le bucket prod doit exister"
+    condition     = alltrue([for k, m in module.bucket : m.encryption_algorithm == "AES256"])
+    error_message = "Tous les buckets doivent être chiffrés en AES256"
   }
 }

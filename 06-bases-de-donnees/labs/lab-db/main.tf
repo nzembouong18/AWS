@@ -72,7 +72,6 @@ resource "aws_db_instance" "pg" {
   skip_final_snapshot     = true  # lab uniquement ! false en production
 
   iam_database_authentication_enabled = true
-  performance_insights_enabled        = true
 }
 
 # --- DynamoDB ---
