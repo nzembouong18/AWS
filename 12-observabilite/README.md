@@ -105,6 +105,8 @@ GuardDuty finding HIGH → EventBridge → Lambda (isoler l'instance) + SNS
 
 **Énoncé** : instrumenter l'application du module 07/08 et automatiser les réactions.
 
+Prérequis : la Lambda `lab08-api` du module 08 doit être déployée **et invoquée au moins une fois** (le log group doit exister pour le metric filter) ; sinon passez `-var lambda_name=<autre fonction>`.
+
 Code : [`labs/lab-observability/`](labs/lab-observability/) crée : topic SNS + abonnement e-mail, dashboard, alarme sur erreurs Lambda, metric filter sur logs, trail CloudTrail → S3, règle EventBridge qui notifie à chaque `StopInstances`.
 
 Étapes :

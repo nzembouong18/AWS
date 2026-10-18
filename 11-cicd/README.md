@@ -25,7 +25,7 @@ Principes DevOps : **build once, deploy many** (même artefact dans tous les env
 
 | Service | Rôle |
 |---|---|
-| **CodeCommit** | Dépôt Git (⚠️ fermé aux nouveaux clients depuis 2024 : préférer GitHub/GitLab) |
+| **CodeCommit** | Dépôt Git (⚠️ fermé aux nouveaux clients en 2024 puis rouvert ; vérifiez sa disponibilité, GitHub/GitLab restent le choix courant) |
 | **CodeBuild** | Build/tests managés, conteneurs éphémères, `buildspec.yml` |
 | **CodeDeploy** | Déploiement vers EC2/on-prem, Lambda, ECS (rolling, blue/green, canary) via `appspec` |
 | **CodePipeline** | Orchestration (source → build → test → deploy → approbation), V2 déclencheurs/variables |

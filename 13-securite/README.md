@@ -114,7 +114,7 @@ Compte compromis : root + MFA, révoquer clés, CloudTrail pour mesurer l'étend
 
 **Énoncé** : appliquer un socle de sécurité avec Terraform.
 
-Code : [`labs/lab-security/`](labs/lab-security/) crée : CMK avec rotation et policy (admins/utilisateurs séparés), secret chiffré, chiffrement EBS par défaut, Block Public Access au niveau compte, GuardDuty, WAF avec règles managées + limitation de débit, et règle Config « SG ssh ouvert ».
+Code : [`labs/lab-security/`](labs/lab-security/) crée : CMK avec rotation, dont la policy délègue la gestion à IAM (l'accès est alors donné rôle par rôle), secret chiffré, chiffrement EBS par défaut, Block Public Access au niveau compte, GuardDuty (échoue si un détecteur existe déjà : importez-le), WAF (ACL non associée : à attacher à un ALB/API) avec règles managées + limitation de débit, et règle Config « SSH ouvert » (crée aussi l'enregistreur Config : un seul par région et par compte).
 
 Étapes :
 1. `terraform apply`.

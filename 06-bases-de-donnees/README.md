@@ -97,7 +97,7 @@ Redis/Valkey (persistance, réplication, Multi-AZ, clustering, pub/sub) ou Memca
 
 **Énoncé** : déployer en Terraform (a) une instance RDS PostgreSQL dans des subnets privés avec mot de passe géré par Secrets Manager, chiffrée, sauvegardée, (b) une table DynamoDB on-demand avec GSI et TTL.
 
-Code : [`labs/lab-db/`](labs/lab-db/) — nécessite un VPC (module 03 ou VPC par défaut avec `use_default_vpc=true`).
+Code : [`labs/lab-db/`](labs/lab-db/) — utilise le VPC par défaut (la base reste privée : `publicly_accessible=false`). Pour la connexion, lancez une instance SSM dans le même VPC (module 04).
 
 Étapes :
 1. `terraform apply -var="multi_az=false"` (économique) puis comparez avec `true`.

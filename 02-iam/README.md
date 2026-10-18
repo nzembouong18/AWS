@@ -139,7 +139,7 @@ Code : [`labs/lab-iam/`](labs/lab-iam/)
 Étapes :
 1. `terraform init && terraform apply`
 2. Examinez les policies créées (`main.tf`).
-3. Assumez le rôle `dev-role` (output `assume_command`) — avec un utilisateur de test dans le groupe `devs`.
+3. Assumez le rôle `dev-role` (output `assume_command`) en tant que `alice-test` : Terraform ne crée ni clé d'accès ni MFA, ajoutez-les à la main (console IAM → *Security credentials*), car la trust policy exige le MFA.
 4. Tentez `aws ec2 run-instances --dry-run` en `us-east-1` → refus attendu ; en `eu-west-3` sans tag → refus ; avec tag → `DryRunOperation`.
 5. Utilisez le **Policy Simulator** pour vérifier.
 6. **Défi** : ajoutez une *permission boundary* empêchant la création de nouveaux utilisateurs IAM.
