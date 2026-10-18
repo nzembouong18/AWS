@@ -1,0 +1,34 @@
+# À copier dans .github/workflows/deploy.yml du dépôt de test
+name: deploy-site
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # nécessaire pour obtenir le jeton OIDC
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "tests unitaires ici"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::<ACCOUNT_ID>:role/lab11-github-deploy
+          aws-region: eu-west-3
+
+      - name: Identité AWS
+        run: aws sts get-caller-identity
+
+      - name: Publier le site
+        run: aws s3 sync ./site s3://<BUCKET> --delete

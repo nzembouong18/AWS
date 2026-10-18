@@ -61,9 +61,9 @@ Certifications visées :
 | Niveau | Certification |
 |---|---|
 | Fondation | Cloud Practitioner (CLF-C02) |
-| Associate | Solutions Architect (SAA-C03), Developer (DVA-C02), CloudOps Engineer (SOA-C03) |
+| Associate | Solutions Architect (SAA-C03), Developer (DVA-C02), CloudOps Engineer (SOA) |
 | Professional | **DevOps Engineer Professional (DOP-C02)**, Solutions Architect Professional (SAP-C02) |
-| Spécialité | Security (SCS-C03), Advanced Networking (ANS-C01) |
+| Spécialité | Security (SCS), Advanced Networking (ANS-C01) |
 
 > Vérifiez toujours les codes et versions d'examen sur [aws.amazon.com/certification](https://aws.amazon.com/certification/) : AWS les renouvelle régulièrement.
 

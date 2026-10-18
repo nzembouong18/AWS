@@ -67,7 +67,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
 }
 
 resource "aws_s3_bucket_lifecycle_configuration" "data" {
-  bucket = aws_s3_bucket.data.id
+  bucket     = aws_s3_bucket.data.id
   depends_on = [aws_s3_bucket_versioning.data]
 
   rule {

@@ -1,0 +1,8 @@
+# Étape 5 : refactoring sans destruction. Exemple : renommer local.envs["dev"] en "development"
+# 1) renommer la clé dans locals.envs
+# 2) ajouter ce bloc, puis `terraform plan` doit afficher "has moved" et non destroy/create
+
+moved {
+  from = module.bucket["dev"]
+  to   = module.bucket["development"]
+}
