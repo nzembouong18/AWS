@@ -8,9 +8,10 @@ args=(--role-arn "$ROLE_ARN" --role-session-name "demo-$(date +%s)" --duration-s
 [ -n "$MFA_SERIAL" ] && args+=(--serial-number "$MFA_SERIAL" --token-code "$MFA_CODE")
 
 creds=$(aws sts assume-role "${args[@]}" --query Credentials --output json)
-export AWS_ACCESS_KEY_ID=$(jq -r .AccessKeyId <<<"$creds")
-export AWS_SECRET_ACCESS_KEY=$(jq -r .SecretAccessKey <<<"$creds")
-export AWS_SESSION_TOKEN=$(jq -r .SessionToken <<<"$creds")
+AWS_ACCESS_KEY_ID=$(jq -r .AccessKeyId <<<"$creds")
+AWS_SECRET_ACCESS_KEY=$(jq -r .SecretAccessKey <<<"$creds")
+AWS_SESSION_TOKEN=$(jq -r .SessionToken <<<"$creds")
+export AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
 echo "Expire le : $(jq -r .Expiration <<<"$creds")"
 
 echo "== Identité effective =="
