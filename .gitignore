@@ -14,3 +14,7 @@ crash.log
 .DS_Store
 .idea/
 .vscode/
+
+# PDF : fichiers intermédiaires
+pdf/cours.md
+pdf/cours.html
