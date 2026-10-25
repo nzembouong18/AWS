@@ -89,9 +89,11 @@ terraform init && terraform apply
 
 Convention : région par défaut `eu-west-3` (Paris) — adaptable via la variable `region`.
 
-## Support de présentation
+## Supports de cours (PowerPoint et PDF)
 
 Un PowerPoint de 124 diapositives (avec notes de présentation) couvre toute la formation : [`presentation/`](presentation/). Il se régénère depuis `presentation/content.js`.
+
+Le cours complet est aussi disponible en PDF (114 pages, signets par module) : [`pdf/formation-aws-devops.pdf`](pdf/formation-aws-devops.pdf).
 
 ## Méthode pédagogique recommandée (formateur)
 
