@@ -89,6 +89,10 @@ terraform init && terraform apply
 
 Convention : région par défaut `eu-west-3` (Paris) — adaptable via la variable `region`.
 
+## Support de présentation
+
+Un PowerPoint de 124 diapositives (avec notes de présentation) couvre toute la formation : [`presentation/`](presentation/). Il se régénère depuis `presentation/content.js`.
+
 ## Méthode pédagogique recommandée (formateur)
 
 - **Format de journée** : 30 % cours, 20 % démo, 50 % labo.
