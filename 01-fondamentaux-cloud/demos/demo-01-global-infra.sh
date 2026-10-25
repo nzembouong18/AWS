@@ -13,7 +13,7 @@ aws ec2 describe-availability-zones --region "$REGION" \
 echo; echo "== Nombre de services AWS disponibles dans $REGION =="
 aws ssm get-parameters-by-path \
   --path "/aws/service/global-infrastructure/regions/$REGION/services" \
-  --region us-east-1 --query 'length(Parameters)' --output text || true
+  --region us-east-1 --query 'Parameters[].Name' --output text | wc -w
 
 echo; echo "== Types d'instances disponibles par AZ (t3.micro) =="
 aws ec2 describe-instance-type-offerings --location-type availability-zone \

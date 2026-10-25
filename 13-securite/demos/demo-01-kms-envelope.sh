@@ -11,7 +11,7 @@ echo "Données secrètes : numéro de carte 4111-1111-1111-1111" > "$TMP/secret.
 
 # 1) Clé de données : une version en clair (usage local), une chiffrée par la CMK (à stocker)
 aws kms generate-data-key --key-id "$ALIAS" --key-spec AES_256 --output json > "$TMP/dk.json"
-jq -r .Plaintext      "$TMP/dk.json" | base64 -d > "$TMP/dk.plain"
+jq -r .Plaintext      "$TMP/dk.json" > "$TMP/dk.plain"          # clé en base64 (texte) : sûr pour -pass file:
 jq -r .CiphertextBlob "$TMP/dk.json" | base64 -d > "$TMP/dk.enc"
 
 # 2) Chiffrement local, puis destruction de la clé en clair
@@ -20,7 +20,7 @@ shred -u "$TMP/dk.plain" "$TMP/dk.json" 2>/dev/null || rm -f "$TMP/dk.plain" "$T
 echo "Stocké : secret.enc + dk.enc (clé de données chiffrée). Aucun secret en clair."
 
 # 3) Déchiffrement : KMS déchiffre la clé de données, puis déchiffrement local
-aws kms decrypt --ciphertext-blob "fileb://$TMP/dk.enc" --query Plaintext --output text | base64 -d > "$TMP/dk.plain"
+aws kms decrypt --ciphertext-blob "fileb://$TMP/dk.enc" --query Plaintext --output text > "$TMP/dk.plain"
 openssl enc -d -aes-256-cbc -pbkdf2 -in "$TMP/secret.enc" -pass file:"$TMP/dk.plain"
 
 echo "Nettoyage :"

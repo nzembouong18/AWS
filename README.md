@@ -37,7 +37,7 @@ Formation complète, en français, pour **s'auto-former** ou **former des profil
 | 16 | [Projet final](16-projet-final/) | 3 j | Expert | Plateforme 3-tiers + CI/CD + observabilité |
 | 17 | [Préparation aux certifications](17-certifications/) | 2 sem. | Tous | Plans de révision, questions, flashcards, stratégie d'examen |
 
-**Total** : environ 20 jours de formation pratique (≈ 8 à 12 semaines en autoformation à mi-temps).
+**Total** : environ 22 jours de formation pratique (≈ 8 à 12 semaines en autoformation à mi-temps).
 
 ## Structure d'un module
 

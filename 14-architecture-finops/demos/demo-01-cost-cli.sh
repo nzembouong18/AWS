@@ -8,7 +8,7 @@ echo "== Coût du mois par service =="
 aws ce get-cost-and-usage --time-period Start="$START",End="$END" --granularity MONTHLY \
   --metrics UnblendedCost --group-by Type=DIMENSION,Key=SERVICE \
   --query 'ResultsByTime[0].Groups[].[Keys[0],Metrics.UnblendedCost.Amount]' --output text \
-  | sort -k2 -nr | head -10
+  | sort -t$'\t' -k2 -nr | head -10
 
 echo; echo "== Prévision fin de mois =="
 aws ce get-cost-forecast --time-period Start="$(date -u +%Y-%m-%d)",End="$(date -u -d "$(date -u +%Y-%m-01) +1 month" +%Y-%m-%d)" \

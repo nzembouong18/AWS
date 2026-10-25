@@ -35,7 +35,7 @@ jobs:
         with:
           directory: infra
           soft_fail: false
-      - run: terraform -chdir=$TF_DIR plan -input=false -out=tfplan
+      - run: terraform -chdir=$TF_DIR plan -input=false -lock=false -out=tfplan   # -lock=false : le rôle plan est en lecture seule (pas de verrou DynamoDB)
 
   apply:
     if: github.event_name == 'push'

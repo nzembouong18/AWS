@@ -63,7 +63,7 @@
 | ALB | 100 règles/listener (défaut) ; idle timeout 60 s |
 | IAM | policy managée ≤ 6 144 caractères ; 10 policies managées/rôle (défaut) ; session de rôle 1-12 h |
 | KMS | chiffrement direct ≤ 4 Ko |
-| RDS | sauvegardes 1-35 jours ; 15 réplicas lecture (Aurora), 5 (RDS) |
+| RDS | sauvegardes 1-35 jours ; 15 réplicas de lecture (Aurora et RDS MySQL/MariaDB/PostgreSQL) |
 | Secrets Manager | secret ≤ 64 Ko |
 | EFS | NFSv4.1, port 2049 |
 
