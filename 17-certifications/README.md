@@ -174,7 +174,7 @@ Priorité : modules 02, 06 (DynamoDB), 08 (Lambda, API GW, SQS/SNS), 10 (SAM/Clo
 | Fichier | Rôle |
 |---|---|
 | [questions-entrainement.md](questions-entrainement.md) | 45 questions d'examen commentées par domaine |
-| [flashcards.md](flashcards.md) | ~135 cartes question/réponse (import Anki possible) |
+| [flashcards.md](flashcards.md) | 134 cartes question/réponse (import Anki possible) |
 | [cheatsheet.md](cheatsheet.md) | Aide-mémoire : mots-clés → service, limites, comparatifs |
 | [suivi-progression.md](suivi-progression.md) | Tableau de suivi et cahier d'erreurs |
 

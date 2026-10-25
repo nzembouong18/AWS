@@ -13,11 +13,11 @@ module.exports = [
     stats: [
       { v: "18", l: "modules, de 00 à 17" },
       { v: "~22 j", l: "de formation pratique" },
-      { v: "15", l: "labos Terraform déployables" },
-      { v: "135", l: "flashcards et 45 questions d'examen" },
+      { v: "15", l: "labos pratiques, dont 14 en Terraform" },
+      { v: "134", l: "flashcards et 45 questions d'examen" },
     ],
     foot: "Chaque module suit le même rythme : cours, démos, labo, quiz.",
-    notes: "Environ 8 à 12 semaines en autoformation à mi-temps. Les 15 labos sont écrits en Terraform et ont été validés avec terraform validate. Le rythme conseillé en présentiel : 30 % de cours, 20 % de démo, 50 % de labo." },
+    notes: "Environ 8 à 12 semaines en autoformation à mi-temps. Les labos sont écrits en Terraform (sauf l'étude de cas du module 14) et la syntaxe a été validée avec terraform validate ; aucun n'a été déployé sur un compte réel. Le rythme conseillé en présentiel : 30 % de cours, 20 % de démo, 50 % de labo." },
 
   { t: "table", kicker: "INTRODUCTION", title: "À qui s'adresse ce cours ?",
     head: ["Profil", "Point de départ", "Objectif"],
@@ -115,7 +115,7 @@ module.exports = [
   { t: "flow", title: "Régions, zones et edge",
     steps: [
       { h: "Région", p: "Zone géographique isolée, ex. eu-west-3 (Paris)" },
-      { h: "Availability Zone", p: "Un ou plusieurs datacenters, latence inférieure à 2 ms entre zones" },
+      { h: "Availability Zone", p: "Un ou plusieurs datacenters, liaisons à très faible latence entre zones" },
       { h: "Edge location", p: "Points de présence pour CloudFront et Route 53" },
     ],
     note: "Concevoir pour la panne : répartir chaque tier sur au moins 2 zones.",
@@ -458,7 +458,7 @@ module.exports = [
     stats: [
       { v: "15 min", l: "durée maximale d'une exécution" },
       { v: "10 Go", l: "mémoire maximale, CPU proportionnel" },
-      { v: "1 000", l: "exécutions simultanées par région (défaut)" },
+      { v: "1 000", l: "exécutions simultanées par région (défaut, relevable)" },
     ],
     foot: "Plus long que 15 minutes : Step Functions, Fargate ou Batch.",
     notes: "Trois modes d'invocation : synchrone (API Gateway), asynchrone (S3, SNS, EventBridge, avec réessais et DLQ), et polling (SQS, Kinesis, DynamoDB Streams). Le cold start se réduit avec un paquet léger, arm64, SnapStart ou la concurrence provisionnée." },
@@ -939,7 +939,7 @@ module.exports = [
   { t: "cards", title: "Un plan de révision efficace",
     cards: [
       { i: "FaFlask", h: "Pratiquer d'abord", p: "Chaque service doit avoir été manipulé : labos du dépôt." },
-      { i: "FaLayerGroup", h: "Réviser par répétition", p: "Flashcards espacées : environ 135 cartes fournies." },
+      { i: "FaLayerGroup", h: "Réviser par répétition", p: "Flashcards espacées : 134 cartes fournies." },
       { i: "FaClipboardList", h: "Examens blancs", p: "Au moins 3, en analysant toutes les réponses." },
       { i: "FaBookOpen", h: "Cahier d'erreurs", p: "Une ligne par erreur : la règle de décision manquante." },
     ],

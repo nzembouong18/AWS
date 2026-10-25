@@ -28,7 +28,7 @@ Avantages classiques : passer du **CapEx à l'OpEx**, élasticité, rapidité de
 ```
 Partition AWS (aws, aws-cn, aws-us-gov)
  └── Région (ex. eu-west-3 Paris) — zone géographique isolée
-      └── Availability Zone (eu-west-3a/b/c) — 1+ datacenters, latence < 2 ms entre AZ
+      └── Availability Zone (eu-west-3a/b/c) — 1+ datacenters, liaisons à très faible latence entre AZ
            └── Datacenters
  └── Edge Locations / Points of Presence — CloudFront, Route 53, Global Accelerator
  └── Local Zones, Wavelength, Outposts — extensions proches des utilisateurs/on-prem
